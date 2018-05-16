@@ -1,6 +1,7 @@
 #!/bin/bash
 
-dotfiles=(".bash_profile" ".fzf.bash" ".git-completion.bash" ".git-prompt.sh" ".gitconfig")
+dotfiles=(".bash_profile" ".fzf.bash" ".git-completion.bash" ".git-prompt.sh" 
+          ".gitconfig" ".vimrc" ".tmux.conf")
 dir="${HOME}/.dotfiles"
 
 for dotfile in "${dotfiles[@]}"; do
