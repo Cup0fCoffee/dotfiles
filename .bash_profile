@@ -13,7 +13,6 @@ export PATH=$HOME/webdrivers/chromedriver:$PATH
 # Firefox (added manually)
 export PATH=$HOME/webdrivers/firefox:$PATH
 
-
 # Setting PATH for Python 3.6
 # The original version is saved in .bash_profile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/3.6/bin:${PATH}"
@@ -29,7 +28,6 @@ export PATH
 PYTHONUSERBASE="/usr/local/"
 export PYTHONUSERBASE
 
-
 ### PYTHONPATH
 # Additional for python packages installed with brew; really don't like this
 # PYTHONPATH="/usr/local/lib/python3.6/site-packages:${PYTHONPATH}"
@@ -40,6 +38,7 @@ export PYTHONUSERBASE
 CDPATH=".:~/programming"
 
 ### tmux aliases
+alias tmux="tmux -2" # for 256 color support
 alias ths="tmuxp load hscr"
 alias tls="tmux list-sessions"
 alias tks="tmux kill-session -t"
@@ -56,7 +55,6 @@ if [ -e ~/.git-prompt.sh ]; then
 fi
 PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\W\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
 export PS1
-
 
 ### Colored ls
 if [ -d ~/.dircolors ]; then
@@ -76,3 +74,10 @@ PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\W\[\e[1;30m\]$(_
 ### Better-looking less for binary files
 # for syntax hl use '-r' flag when calling less
 LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN
+
+### 256 color support in bash
+if [ -e /usr/share/terminfo/x/xterm-256color ]; then
+        export TERM='xterm-256color'
+else
+        export TERM='xterm-color'
+fi
