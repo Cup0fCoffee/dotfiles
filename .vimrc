@@ -33,6 +33,8 @@ syntax on
 " textwrap
 set tw=80
 
+" show a vertical line at 80th char
+
 " mapping for russian layout
 
 " hide autocompletion
