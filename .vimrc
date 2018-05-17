@@ -5,15 +5,27 @@
 colo seoul256
 let g:seoul256_background = 239
 
-" linenumbering
-" source: https://jeffkreeftmeijer.com/vim-number/
-set number relativenumber
+" line numbering
+" source 1: https://jeffkreeftmeijer.com/vim-number/
+" source 2: https://vi.stackexchange.com/questions/4120/how-to-enable-disable-an-augroup-on-the-fly
 
-augroup numbertoggle
-  autocmd!
-  autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-  autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup END
+function! ToggleNumbers()
+    if !exists('#numbertoggle#BufEnter')
+        set number relativenumber
+        augroup numbertoggle
+          autocmd!
+          autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+          autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+        augroup END
+    else
+        set nonumber norelativenumber
+        augroup numbertoggle
+            autocmd!
+        augroup END
+    endif
+endfunction
+
+call ToggleNumbers()
 
 " 256 color support
 set t_Co=256
@@ -64,6 +76,7 @@ set hlsearch
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
 call plug#begin('~/.vim/plugged')
 
+
 " lightline (status and tab bar)
 Plug 'itchyny/lightline.vim'
 set laststatus=2
@@ -107,5 +120,41 @@ let g:indent_guides_guide_size = 1
 Plug 'ntpeters/vim-better-whitespace'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
+
+" vim-xmark
+Plug 'junegunn/vim-xmark'
+
+" close-tag
+Plug 'alvan/vim-closetag'
+
+" sytastic
+" Plug 'scrooloose/syntastic'
+
+" vim-polyglot
+Plug 'sheerun/vim-polyglot'
+
+" vim-gitgutter
+Plug 'airblade/vim-gitgutter'
+
+" limelight
+Plug 'junegunn/limelight.vim'
+
+" goyo
+Plug 'junegunn/goyo.vim'
+nmap <leader>g :Goyo<CR>
+
+function! s:goyo_enter()
+    call ToggleNumbers()
+    Limelight
+endfunction
+
+function! s:goyo_leave()
+    call ToggleNumbers()
+    Limelight!
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
 
 call plug#end()

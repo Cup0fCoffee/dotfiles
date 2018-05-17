@@ -3,7 +3,7 @@ My dotfiles.
 
 # To Do:
 - [x] Add to do
-- [ ] Recover plugins from the plugins tracklist
+- [x] Recover plugins from the plugins tracklist
 - [x] Finish adding standart settings
 - [ ] Add descriptions to the top of each file
 - [x] Set up tmux configs (add nice window management shortcuts)
