@@ -31,7 +31,7 @@ call ToggleNumbers()
 set t_Co=256
 
 " remove delay in tmux
-" (source: https://www.johnhawthorn.com/2012/09/vi-escape-delays/)
+" source: https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
 
 " tabfix
@@ -155,6 +155,10 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" vim-slashed (improves searching)
+Plug 'junegunn/vim-slash'
+noremap <plug>(slash-after) zz
 
 
 call plug#end()
