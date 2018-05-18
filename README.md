@@ -15,3 +15,4 @@ My dotfiles.
 - [ ] Write a script for scheduling sleep and wake (use `pmset schedule`)
 - [ ] Rewrite the setup script to be less error prone and to add clean up?
 - [x] Ensure mouse support in both tmux and vim
+- [ ] remove the dots ('.') from file names and make the setup script add them 
