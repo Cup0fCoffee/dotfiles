@@ -14,4 +14,4 @@ My dotfiles.
 - [ ] Write a script that would install all require dependecies
 - [ ] Write a script for scheduling sleep and wake (use `pmset schedule`)
 - [ ] Rewrite the setup script to be less error prone and to add clean up?
-- [ ] Ensure mouse support in both tmux and vim
+- [x] Ensure mouse support in both tmux and vim

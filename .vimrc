@@ -70,6 +70,8 @@ set smartcase
 set incsearch
 set hlsearch
 
+" enable mouse in all modes
+set mouse=a
 
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
 " Plugins (using vim-plug; source: https://github.com/junegunn/vim-plug)
