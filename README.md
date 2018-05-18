@@ -7,7 +7,7 @@ My dotfiles.
 - [x] Finish adding standart settings
 - [ ] Add descriptions to the top of each file
 - [x] Set up tmux configs (add nice window management shortcuts)
-- [ ] Move plugin tracker file to dotfiles??? (optional)
+- [x] Move plugin tracker file to dotfiles??? (optional)
 - [ ] Write a description of how is this maintained and used
 - [x] ~~Symlinks vs sourcing files?~~ (symlinks for now)
 - [ ] Create a list of dependencies and app used
