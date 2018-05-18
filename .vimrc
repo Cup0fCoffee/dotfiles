@@ -25,7 +25,9 @@ function! ToggleNumbers()
     endif
 endfunction
 
-call ToggleNumbers()
+if !exists('#numbertoggle#BufEnter')
+    call ToggleNumbers()
+endif
 
 " 256 color support
 set t_Co=256
