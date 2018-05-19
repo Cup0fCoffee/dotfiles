@@ -20,22 +20,22 @@ done
 echo -e
 
 echo -en "Proceed? (${GREEN}y${NC}/n) "
-read ans
+read -r ans
 
-if [ $ans != "y" ]; then
+if [ "$ans" != "y" ]; then
     echo "Exiting..."
     exit 1
 fi
 
-if [ $PLATFORM = "Darwin" ] && [ -x "/usr/local/bin/gln" ]; then
-    ln_command=gln
+if [ "$PLATFORM" = "Darwin" ] && [ -x "/usr/local/bin/gln" ]; then
+    ln_command="gln"
 else
-    ln_command=ln
+    ln_command="ln"
 fi
 
 echo "bash command used to create links: ${ln_command}"
 
-if [ $PLATFORM = "Darwin" ] && [ -x "/usr/local/bin/greadlink" ]; then
+if [ "$PLATFORM" = "Darwin" ] && [ -x "/usr/local/bin/greadlink" ]; then
     readlink_command="greadlink -f"
 else
     readlink_command="readlink"
@@ -49,16 +49,16 @@ for dotfile in "${dotfiles[@]}"; do
     origin="${dir}/${dotfile}"
     destination="${HOME}/.${dotfile}"
     echo -e "Creating a soft link for ${YELLOW}${origin}${NC}" \
-         "in ${LT_BLUE}${destination}...${NC}"
-    if [ -h ${destination} ]; then
-        if [ $($readlink_command ${destination}) = ${origin} ]; then
+        "in ${LT_BLUE}${destination}...${NC}"
+    if [ -h "${destination}" ]; then
+        if [ "$($readlink_command "${destination}")" = "${origin}" ]; then
             echo -e "${LT_GREEN}Already exists.${NC}"
         else
             echo -e "${RED}A link exists, but points to another file:" \
-                    "$($readlink_command ${destination})${NC}"
+                    "$($readlink_command "${destination}")${NC}"
             failed+=("${destination}")
         fi
-    elif [ -f ${destination} ]; then
+    elif [ -f "${destination}" ]; then
         echo -e "${RED}A file exists. Delete it (or temporary move it).${NC}"
         failed+=("${destination}")
     else
@@ -71,7 +71,7 @@ clear;
 
 if [ ${#failed[@]} -gt 0 ]; then
     echo -e "${RED}Failed to create links for: "
-    for fail in ${failed[@]}; do
+    for fail in "${failed[@]}"; do
         echo -e "${fail}"
     done
     echo -e "${NC}"
