@@ -131,8 +131,19 @@ Plug 'junegunn/vim-xmark'
 " close-tag
 Plug 'alvan/vim-closetag'
 
-" sytastic
-" Plug 'scrooloose/syntastic'
+" syntastic
+Plug 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" custom checkers
+let g:syntastic_sh_checkers = ['shellcheck']
+
 
 " vim-polyglot
 Plug 'sheerun/vim-polyglot'
