@@ -186,7 +186,5 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 Plug 'junegunn/vim-slash'
 noremap <plug>(slash-after) zz
 
-" vimwiki
-Plug 'vimwiki/vimwiki'
 
 call plug#end()
