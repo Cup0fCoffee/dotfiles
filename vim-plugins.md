@@ -17,7 +17,7 @@
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [vim-slashes](https://github.com/junegunn/vim-slash)
-
+* [vimwiki](https://github.com/vimwiki/vimwiki)
 
 # This file contains some plugins which I want to try to use in the future:
 - [ ] Ctags (helps finding definitions of functions/classes/variables)

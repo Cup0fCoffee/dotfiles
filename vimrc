@@ -47,7 +47,7 @@ filetype plugin on
 syntax on
 
 " textwrap
-set tw=80
+set tw=79
 
 " show a vertical line at 80th char
 set colorcolumn=80
@@ -89,7 +89,7 @@ let g:lightline = {
       \ }
 
 " surround.vim (helps with brackets and quotes)
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " tmuxline
 Plug 'edkolev/tmuxline.vim'
@@ -186,5 +186,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 Plug 'junegunn/vim-slash'
 noremap <plug>(slash-after) zz
 
+" vimwiki
+Plug 'vimwiki/vimwiki'
 
 call plug#end()
