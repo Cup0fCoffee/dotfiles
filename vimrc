@@ -75,6 +75,9 @@ set hlsearch
 " enable mouse in all modes
 set mouse=a
 
+" make ntree open preview on right
+let g:netrw_altv=1
+
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
 " Plugins (using vim-plug; source: https://github.com/junegunn/vim-plug)
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
@@ -108,10 +111,10 @@ let g:tmux_navigator_save_on_switch = 1 " save on leave
 " fugitive
 Plug 'tpope/vim-fugitive'
 
-" fzf.vim
-Plug '/Users/Maxim/.fzf'
-Plug 'junegunn/fzf.vim'
-map <leader>b :Buffers<CR>
+" " fzf.vim
+" Plug '/Users/Maxim/.fzf'
+" Plug 'junegunn/fzf.vim'
+" map <leader>b :Buffers<CR>
 
 " vim indent guides
 Plug 'nathanaelkane/vim-indent-guides'
@@ -186,5 +189,52 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 Plug 'junegunn/vim-slash'
 noremap <plug>(slash-after) zz
 
+" vim-table-mode
+Plug 'dhruvasagar/vim-table-mode'
+
+" vim-easy-align
+Plug 'junegunn/vim-easy-align'
+" Start interactive EasyAlign in visual mode (e.g. vipga)
+xmap ga <Plug>(EasyAlign)
+" Start interactive EasyAlign for a motion/text object (e.g. gaip)
+nmap ga <Plug>(EasyAlign)
+
+" vim-slime
+Plug 'jpalardy/vim-slime'
+let g:slime_target = "vimterminal"
+
+" rainbow_parenthese.vim
+Plug 'junegunn/rainbow_parentheses.vim'
 
 call plug#end()
+
+
+" Source: http://vim.wikia.com/wiki/Nice_window_resizing
+" Map F1 for gvim window resizing.
+" Put this snippet of code in your vimrc for nice window resizing.
+" Press F1 key to toggle between the three settings.
+nmap <F1> :call ResizeWindow()<CR>
+imap <F1> <Esc><F1>a " for insert mode
+function! ResizeWindow()
+    if (has("gui_running"))
+        if s:selectedsize == 1
+            let s:selectedsize = 2
+            set columns=84
+            set lines=35
+        elseif s:selectedsize == 2
+            let s:selectedsize = 3
+            set columns=84
+            set lines=45
+        else " old school console goodness
+            let s:selectedsize = 1
+            set columns=84
+            set lines=25
+        endif
+    endif
+endfunction
+let s:selectedsize=1
+call ResizeWindow()
+
+" " Disable backspace and del keys (may be temporary)
+" inoremap <BS> <Nop>
+" inoremap <Del> <Nop>
