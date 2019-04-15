@@ -186,5 +186,11 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 Plug 'junegunn/vim-slash'
 noremap <plug>(slash-after) zz
 
+" vim slime
+Plug 'jpalardy/vim-slime'
+let g:slime_target = "vimterminal"
+
+" vim-javascript
+Plug 'pangloss/vim-javascript'
 
 call plug#end()

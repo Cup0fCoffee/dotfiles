@@ -84,3 +84,6 @@ fi
 
 ### alias for screen clear
 alias cl="clear"
+
+### alias for love
+alias love="/Applications/love.app/Contents/MacOS/love"
