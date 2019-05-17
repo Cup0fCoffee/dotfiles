@@ -78,6 +78,13 @@ set mouse=a
 " make ntree open preview on right
 let g:netrw_altv=1
 
+" settings specific for scheme files
+augroup filetype_scheme
+    autocmd!
+    autocmd FileType scheme :RainbowParentheses<cr>
+    autocmd FileType scheme :setlocal shiftwidth=2
+augroup end
+
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
 " Plugins (using vim-plug; source: https://github.com/junegunn/vim-plug)
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
