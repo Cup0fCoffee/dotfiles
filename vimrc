@@ -32,6 +32,9 @@ endif
 " 256 color support
 set t_Co=256
 
+" setting for terminal to use 24-bit colours
+set termguicolors
+
 " remove delay in tmux
 " source: https://www.johnhawthorn.com/2012/09/vi-escape-delays/
 set timeoutlen=1000 ttimeoutlen=0
