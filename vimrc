@@ -137,6 +137,7 @@ let g:indent_guides_guide_size = 1
 Plug 'ntpeters/vim-better-whitespace'
 let g:better_whitespace_enabled=1
 let g:strip_whitespace_on_save=1
+let g:strip_whitespace_confirm=0
 
 " vim-xmark
 Plug 'junegunn/vim-xmark'
