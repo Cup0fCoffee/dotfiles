@@ -88,6 +88,12 @@ augroup filetype_scheme
     autocmd FileType scheme :setlocal shiftwidth=2
 augroup end
 
+" settings specific for gitcommit files
+augroup filetype_gitcommit
+    autocmd!
+    autocmd FileType gitcommit :nnoremap <leader>fl :0read !git diff --name-only --staged<CR>
+augroup end
+
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
 " Plugins (using vim-plug; source: https://github.com/junegunn/vim-plug)
 " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " " "
