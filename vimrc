@@ -105,7 +105,18 @@ Plug 'itchyny/lightline.vim'
 set laststatus=2
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component_function': {
+      \   'gitbranch': 'BranchName'
+      \ },
       \ }
+
+function! BranchName()
+    return trim(fugitive#head(6))
+endfunction
 
 " surround.vim (helps with brackets and quotes)
 Plug 'tpope/vim-surround'
