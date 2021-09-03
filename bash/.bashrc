@@ -53,7 +53,7 @@ __git_ps1() { :;}
 if [ -e ~/.git-prompt.sh ]; then
     source ~/.git-prompt.sh
 fi
-PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\W\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
+PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\W\[\e[1;36m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
 export PS1
 
 ### Colored ls
@@ -69,7 +69,6 @@ fi
 if [ -e ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 fi
-PS1='\[\e[34m\]\u\[\e[1;32m\]@\[\e[0;33m\]\h\[\e[35m\]:\[\e[m\]\W\[\e[1;30m\]$(__git_ps1)\[\e[1;31m\]> \[\e[0m\]'
 
 ### Better-looking less for binary files
 # for syntax hl use '-r' flag when calling less
