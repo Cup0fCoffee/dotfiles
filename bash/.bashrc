@@ -86,3 +86,5 @@ alias cl="clear"
 
 ### remaps caps lock to ctrl
 setxkbmap -option ctrl:nocaps
+
+eval "$(direnv hook bash)"
