@@ -42,8 +42,6 @@ nnoremap <leader>sv :source ~/.vimrc<CR>
 
 call plug#begin('~/.vim/plugged')
 
-let g:seoul256_background = 239
-colo seoul256
 Plug 'junegunn/seoul256.vim'
 
 " lightline (status and tab bar)
@@ -62,6 +60,10 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 call plug#end()
+
+
+let g:seoul256_background = 239
+colo seoul256
 
 
 " line numbering
