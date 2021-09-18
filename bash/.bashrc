@@ -70,6 +70,10 @@ if [ -e ~/.git-completion.bash ]; then
     source ~/.git-completion.bash
 fi
 
+### use bash-completion, if available
+[[ $PS1 && -f /usr/share/bash-completion/bash_completion ]] && \
+    . /usr/share/bash-completion/bash_completion
+
 ### Better-looking less for binary files
 # for syntax hl use '-r' flag when calling less
 LESSOPEN="|/usr/local/bin/lesspipe.sh %s"; export LESSOPEN
